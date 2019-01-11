@@ -1,0 +1,78 @@
+@import './lib/reset.scss';
+
+html, body, .container {
+    @include rect(100%, 100%);
+    .container {
+        @include flexbox();
+        @include flex-direction(column);
+        .box {
+            @include flex();
+            @include rect(100%, auto);
+            @include flexbox();
+            @include flex-direction(column);
+            .header {
+                letter-spacing: 0.01rem;
+                @include rect(100%, 0.5rem);
+                @include background-color(#0C84F4);
+                @include text-align();
+                @include line-height(0.5rem);
+                @include flexbox();
+                @include justify-content(space-between);
+                color: rgba(16, 16, 16, 1);
+                font-size: 0.16rem;
+                .left {
+                    @include rect(0.48rem, 100%);
+                    text-align: center;
+                    color: #fff;
+                }
+                .middle {
+                    color: #fff;
+                }
+                .right {
+                    @include rect(0.48rem, 100%);
+                    text-align: center;
+                    color: #fff;
+                    font-weight: bold;
+                }
+            }
+            .content {
+                @include flex();
+                @include rect(100%, auto);
+                @include overflow();
+            }
+        }
+        .footer {
+            @include rect(100%, 0.54rem);
+            @include background-color(#fff);
+            color: #999;
+        }
+    }
+    .iconfont{
+        font-size:0.15rem;
+    }
+}
+.tab-enter, .tab-leave-to {
+    transform: translateX(100%);
+}
+.tab-enter-active {
+    transition: all .5s;
+}
+.tab-enter-to, .tab-leave {
+    transform: translateX(0%);
+}
+.tab-leave-active {
+    transition: all 0s;
+}
+
+.opacity-enter, .opacity-leave-to {
+    opacity: 1;
+}
+.opacity-enter-active {
+    transition: all 0s;
+}
+.opacity-enter-to, .opacity-leave {
+    opacity: 0;
+}
+.opacity-leave-active {
+    transition: all 0s;
+}
